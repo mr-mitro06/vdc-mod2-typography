@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typeface Design: Historic Classification & Type Styles | Seminar Presentation</title>
+  <meta name="description" content="An interactive academic seminar presentation on Typeface Design, Historic Classifications (Old Style, Transitional, Modern, Slab Serif, Sans Serif), and Type Styles.">
+  
+  <!-- Google Fonts for authentic typographic demonstration -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,300..900;1,300..900&family=Roboto+Slab:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="deck-body">
+  
+  <!-- Presentation Wrapper -->
+  <div id="presentation-container" class="presentation-container">
+    
+    <!-- Top Navigation HUD Bar -->
+    <header class="hud-top" id="hud-top">
+      <div class="hud-left">
+        <span class="badge-module">MODULE 04</span>
+        <span class="hud-topic">Typeface Design</span>
+        <span class="hud-divider">/</span>
+        <span class="hud-slide-title" id="hud-slide-title">Title Screen</span>
+      </div>
+
+      <div class="hud-center">
+        <!-- Visual Progress Bar -->
+        <div class="progress-bar-wrapper" title="Presentation Progress">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="hud-right">
+        <button class="hud-btn" id="btn-toggle-notes" title="Toggle Presenter Notes (N)" aria-label="Toggle Presenter Notes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Notes <kbd>N</kbd></span>
+        </button>
+
+        <button class="hud-btn" id="btn-toggle-grid" title="Slide Overview Grid (M)" aria-label="Slide Overview Grid">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>Slides <kbd>M</kbd></span>
+        </button>
+
+        <button class="hud-btn" id="btn-toggle-theme" title="Toggle White / Dark Theme (T)" aria-label="Toggle Theme">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span id="theme-btn-text">White Theme <kbd>T</kbd></span>
+        </button>
+
+        <button class="hud-btn" id="btn-toggle-projector" title="Toggle Projector Mode: High Visibility (P)" aria-label="Toggle Projector Mode">
+          <svg class="icon-projector" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+            <circle cx="8" cy="12" r="2.5"></circle>
+            <line x1="16" y1="10" x2="18" y2="10"></line>
+            <line x1="16" y1="14" x2="18" y2="14"></line>
+            <line x1="5" y1="18" x2="4" y2="21"></line>
+            <line x1="19" y1="18" x2="20" y2="21"></line>
+          </svg>
+          <span id="projector-btn-text">Projector Mode <kbd>P</kbd></span>
+        </button>
+
+        <button class="hud-btn" id="btn-toggle-help" title="Keyboard Shortcuts (?)" aria-label="Keyboard Shortcuts">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </button>
+
+        <button class="hud-btn" id="btn-fullscreen" title="Toggle Fullscreen (F)" aria-label="Toggle Fullscreen">
+          <svg class="icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+          </svg>
+          <svg class="icon-compress hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Presentation Stage (16:9 Viewport Area) -->
+    <main class="presentation-stage" id="presentation-stage">
+      
+      <!-- ==========================================
+           SLIDE 1: TITLE SCREEN
+           ========================================== -->
+      <!-- Presenter Note:
+           "Welcome, esteemed faculty and peers. Today we explore Module 4: Typeface Design. We will investigate the architectural foundations of letterforms—how strokes, contrast, stress, and serifs define type—and trace the historic classifications from 17th-century Garamond through the Swiss modernism of Helvetica, concluding with the functional systems of type styles."
+      -->
+      <section class="slide active" id="slide-1" data-slide="1" data-title="Title Screen">
+        <div class="slide-inner title-slide-layout">
+          <div class="title-bg-watermark">TYPE</div>
+          
+          <div class="title-content-wrapper">
+            <div class="title-meta-badge">
+              <span class="pulse-dot"></span>
+              <span>ACADEMIC SEMINAR PRESENTATION • MODULE 4</span>
+            </div>
+
+            <h1 class="main-title">
+              <span class="title-word" data-word="TYPEFACE">
+                <span class="char">T</span><span class="char">Y</span><span class="char">P</span><span class="char">E</span><span class="char">F</span><span class="char">A</span><span class="char">C</span><span class="char">E</span>
+              </span>
+              <span class="title-word title-accent" data-word="DESIGN">
+                <span class="char">D</span><span class="char">E</span><span class="char">S</span><span class="char">I</span><span class="char">G</span><span class="char">N</span>
+              </span>
+            </h1>
+
+            <p class="title-subtitle">
+              Introduction <span class="bullet">•</span> Historic Classification <span class="bullet">•</span> Type Styles
+            </p>
+
+            <div class="title-footer-grid">
+              <div class="title-footer-item">
+                <span class="tfi-label">PRIMARY SOURCE</span>
+                <span class="tfi-val">Russotti Historical Classification Reference</span>
+              </div>
+              <div class="title-footer-item">
+                <span class="tfi-label">FORMAT</span>
+                <span class="tfi-val">Interactive Visual Exhibition</span>
+              </div>
+              <div class="title-footer-item">
+                <span class="tfi-label">CONTROLS</span>
+                <span class="tfi-val">Keyboard [Space] / [→] to Advance</span>
+              </div>
+            </div>
+
+            <div class="title-action-row">
+              <button class="btn-primary" id="btn-start-presentation">
+                <span>Begin Seminar</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+              <div class="title-hint">Press <kbd>→</kbd> or <kbd>Space</kbd> anytime</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 2: WHAT IS A TYPEFACE?
+           ========================================== -->
+      <!-- Presenter Note:
+           "To begin: What is a typeface? As established in our source, a typeface is the name given to the specific letterform design system of an alphabet. Type is not accidental decoration; it is one of the most universal abstract systems of design that communicates daily. The shapes of type mirror the structure and forms of history and culture—heavily influenced by technical advancements in printing and the changing reading habits of society."
+      -->
+      <section class="slide" id="slide-2" data-slide="2" data-title="What is a Typeface?">
+        <div class="slide-inner two-col-layout">
+          
+          <!-- Left Column: Concise Curated Content -->
+          <div class="col-content">
+            <div class="eyebrow-tag">01 / FOUNDATIONS</div>
+            <h2 class="slide-heading">What is a <span class="text-gradient">Typeface?</span></h2>
+            
+            <div class="statement-card">
+              <span class="quote-mark">“</span>
+              <p class="statement-text">
+                A <strong>typeface</strong> is the name given to the <em>specific letterform design system</em> of an alphabet.
+              </p>
+            </div>
+
+            <ul class="key-points-list">
+              <li>
+                <div class="point-bullet">01</div>
+                <div>
+                  <strong>Universal Abstract Design System:</strong> Type is one of humanity’s most universal visual systems, communicating meaning beyond raw spoken language.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">02</div>
+                <div>
+                  <strong>Cultural & Historical Reflection:</strong> The physical shapes of letters reflect the architecture, tools, philosophy, and political eras in which they were created.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">03</div>
+                <div>
+                  <strong>Technological & Societal Forces:</strong> Technical advancements in printing presses, paper quality, metal founding, and cultural reading habits dictate type evolution.
+                </div>
+              </li>
+            </ul>
+
+            <div class="classification-rule-badge">
+              <span>Logical Grouping Rule:</span> Typefaces are grouped by <strong>function</strong> and the <strong>period in history</strong> in which they were created.
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Demonstration -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">INTERACTIVE SPECIMEN SWITCHER</span>
+                <span class="card-hint">Switch typeface system</span>
+              </div>
+
+              <!-- Live Text Input -->
+              <div class="specimen-input-row">
+                <label for="sample-text-input">Type Custom Text:</label>
+                <input type="text" id="sample-text-input" value="Typographia" maxlength="20" spellcheck="false" autocomplete="off">
+              </div>
+
+              <!-- Large Live Specimen Display -->
+              <div class="specimen-display-box" id="specimen-display-box">
+                <div class="specimen-text" id="live-specimen-text">Typographia</div>
+                <div class="specimen-watermark-meta" id="live-specimen-meta">Garamond • 1617 • France</div>
+              </div>
+
+              <!-- Switcher Buttons -->
+              <div class="type-switcher-buttons" id="type-switcher-buttons">
+                <button class="switcher-btn active" data-font="garamond" data-class="Old Style" data-year="1617 (France)" data-notes="Handcrafted humanist slant, low stroke contrast, heavy brackets.">
+                  <span class="sw-name">Garamond</span>
+                  <span class="sw-tag">Old Style</span>
+                </button>
+                <button class="switcher-btn" data-font="baskerville" data-class="Transitional" data-year="1757 (England)" data-notes="Refined serifs, increased contrast, vertical upright emphasis.">
+                  <span class="sw-name">Baskerville</span>
+                  <span class="sw-tag">Transitional</span>
+                </button>
+                <button class="switcher-btn" data-font="bodoni" data-class="Modern" data-year="1788 (Italy)" data-notes="Extreme thick/thin contrast, razor unbracketed hairlines.">
+                  <span class="sw-name">Bodoni</span>
+                  <span class="sw-tag">Modern</span>
+                </button>
+                <button class="switcher-btn" data-font="slab" data-class="Slab Serif" data-year="1894 (US)" data-notes="Industrial square blocky serifs engineered for high-impact clarity.">
+                  <span class="sw-name">Century Exp.</span>
+                  <span class="sw-tag">Slab Serif</span>
+                </button>
+                <button class="switcher-btn" data-font="sans" data-class="Sans Serif" data-year="1957 (Switzerland)" data-notes="Pure machined geometry, unadorned terminals, uniform stroke weight.">
+                  <span class="sw-name">Helvetica</span>
+                  <span class="sw-tag">Sans Serif</span>
+                </button>
+              </div>
+
+              <!-- Live Analysis Box -->
+              <div class="specimen-analysis" id="specimen-analysis">
+                <div class="analysis-indicator"></div>
+                <div class="analysis-text" id="analysis-text">
+                  <strong>Old Style (Garamond):</strong> Organic humanist proportions rooted in pen calligraphy, gentle contrast, heavily bracketed serifs.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 3: HISTORIC CLASSIFICATION (TIMELINE)
+           ========================================== -->
+      <!-- Presenter Note:
+           "Here is the definitive five-part historical classification from our source material. Spanning from 1617 to 1957: Old Style represented by Garamond in France (1617), Transitional by Baskerville in England (1757), Modern by Bodoni in Italy (1788), Egyptian or Slab Serif by Century Expanded in the United States (1894), and Contemporary Sans Serif by Helvetica in Switzerland (1957). Notice how each shift aligns with industrial revolutions and changing printing technologies."
+      -->
+      <section class="slide" id="slide-3" data-slide="3" data-title="Historic Classification">
+        <div class="slide-inner full-width-layout">
+          
+          <div class="section-header-row">
+            <div>
+              <div class="eyebrow-tag">02 / CHRONOLOGY & EVOLUTION</div>
+              <h2 class="slide-heading">Historic Classification of <span class="text-gradient">Typography</span></h2>
+            </div>
+            <div class="header-source-cite">
+              <span>Source: Russotti Categorization / Study Materials</span>
+            </div>
+          </div>
+
+          <!-- Interactive Stepped Timeline Track -->
+          <div class="timeline-container">
+            <div class="timeline-track">
+              <div class="timeline-line-base"></div>
+              <div class="timeline-line-active" id="timeline-line-active"></div>
+
+              <!-- Node 1: Old Style -->
+              <div class="timeline-node active" data-index="0" data-class="oldstyle">
+                <div class="node-pin"></div>
+                <div class="node-year">1617</div>
+                <div class="node-label">Old Style</div>
+                <div class="node-sub">Garamond (France)</div>
+              </div>
+
+              <!-- Node 2: Transitional -->
+              <div class="timeline-node" data-index="1" data-class="transitional">
+                <div class="node-pin"></div>
+                <div class="node-year">1757</div>
+                <div class="node-label">Transitional</div>
+                <div class="node-sub">Baskerville (England)</div>
+              </div>
+
+              <!-- Node 3: Modern -->
+              <div class="timeline-node" data-index="2" data-class="modern">
+                <div class="node-pin"></div>
+                <div class="node-year">1788</div>
+                <div class="node-label">Modern</div>
+                <div class="node-sub">Bodoni (Italy)</div>
+              </div>
+
+              <!-- Node 4: Slab Serif -->
+              <div class="timeline-node" data-index="3" data-class="slab">
+                <div class="node-pin"></div>
+                <div class="node-year">1894</div>
+                <div class="node-label">Egyptian / Slab</div>
+                <div class="node-sub">Century Exp. (US)</div>
+              </div>
+
+              <!-- Node 5: Sans Serif -->
+              <div class="timeline-node" data-index="4" data-class="sans">
+                <div class="node-pin"></div>
+                <div class="node-year">1957</div>
+                <div class="node-label">Sans Serif</div>
+                <div class="node-sub">Helvetica (Swiss)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Timeline Detail Card -->
+          <div class="timeline-detail-card" id="timeline-detail-card">
+            <div class="td-left">
+              <div class="td-specimen-large" id="td-specimen-large">Gg</div>
+              <div class="td-font-name" id="td-font-name">Garamond</div>
+              <div class="td-meta" id="td-meta">France • 1617 • Claude Garamond / Jean Jannon</div>
+            </div>
+
+            <div class="td-middle">
+              <div class="td-subheading">CORE CHARACTERISTICS</div>
+              <ul class="td-features-list" id="td-features-list">
+                <li><strong>Stroke Contrast:</strong> Very low contrast between thick and thin strokes.</li>
+                <li><strong>Serif & Bracketing:</strong> Heavy, curved brackets connecting serif to main stem.</li>
+                <li><strong>Stress Axis:</strong> Extreme diagonal / oblique stress matching broad-nib pen calligraphy.</li>
+                <li><strong>Visual Feeling:</strong> Warm, organic, humanist, and noticeably less machined.</li>
+              </ul>
+            </div>
+
+            <div class="td-right">
+              <div class="td-subheading">HISTORICAL CONTEXT</div>
+              <p class="td-history-desc" id="td-history-desc">
+                Derived directly from Venetian renaissance humanism and 16th-century royal French typography. Cut in metal by hand, reflecting the organic angle of the scribe's wrist before mechanized industrial uniformity.
+              </p>
+              <div class="td-navigation-hint">Click any timeline year or use the buttons below to compare eras</div>
+              <div class="td-btn-group">
+                <button class="btn-micro" id="btn-prev-timeline">← Previous Era</button>
+                <button class="btn-micro" id="btn-next-timeline">Next Era →</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 4: STROKES
+           ========================================== -->
+      <!-- Presenter Note:
+           "Now let us examine the anatomical building block: the Stroke. A stroke is defined simply as the line that makes up a letter. Strokes can be straight—as in k, l, v, w, x, z—or curved, as in c, o, s. Straight strokes are horizontal, vertical, or diagonal. Curved strokes can be open or closed. Furthermore, Contrast is defined as the difference between thick and thin strokes—high contrast means a drastic difference."
+      -->
+      <section class="slide" id="slide-4" data-slide="4" data-title="Strokes & Contrast">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">03 / ANATOMY OF TYPE</div>
+            <h2 class="slide-heading">The Anatomy of <span class="text-gradient">Strokes</span></h2>
+
+            <div class="statement-card">
+              <p class="statement-text">
+                A <strong>stroke</strong> is the fundamental line that makes up a letter.
+              </p>
+            </div>
+
+            <div class="anatomy-grid-2">
+              <div class="ag-item">
+                <span class="ag-tag">STRAIGHT STROKES</span>
+                <p>Found in letters such as <code>k, l, v, w, x, z</code>.</p>
+                <div class="ag-types">Horizontal • Vertical • Diagonal</div>
+              </div>
+              <div class="ag-item">
+                <span class="ag-tag">CURVED STROKES</span>
+                <p>Found in letters such as <code>c, o, s</code>.</p>
+                <div class="ag-types">Open Curves (c, s) • Closed Curves (o)</div>
+              </div>
+            </div>
+
+            <div class="contrast-def-box">
+              <div class="cdb-title">CONTRAST DEFINITION</div>
+              <p>
+                <strong>Contrast</strong> is the difference between <em>thick</em> and <em>thin</em> strokes. 
+                A <strong>high contrast</strong> indicates a severe, dramatic difference between the thickest and thinnest elements of a letterform.
+              </p>
+            </div>
+
+            <div class="interaction-instructions">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Hover over or tap different anatomical zones on the letterform to inspect stroke attributes.</span>
+            </div>
+          </div>
+
+          <!-- Interactive Letter Anatomy Diagram -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">STROKE INSPECTOR</span>
+                <span class="card-badge" id="stroke-active-label">Hover zones on letter</span>
+              </div>
+
+              <!-- Interactive SVG Letter 'R' -->
+              <div class="svg-anatomy-container">
+                <svg id="anatomy-svg" viewBox="0 0 500 520" class="anatomy-letter-svg">
+                  <defs>
+                    <!-- Linear gradients for stroke highlighting -->
+                    <linearGradient id="grad-stem" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#4daafc" />
+                      <stop offset="100%" stop-color="#0066ff" />
+                    </linearGradient>
+                    <linearGradient id="grad-hairline" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#ff9966" />
+                      <stop offset="100%" stop-color="#ff5e62" />
+                    </linearGradient>
+                    <linearGradient id="grad-bowl" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#d4af37" />
+                      <stop offset="100%" stop-color="#f3e098" />
+                    </linearGradient>
+                    <linearGradient id="grad-leg" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#10b981" />
+                      <stop offset="100%" stop-color="#059669" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Baseline and Cap-Height Guidelines -->
+                  <line x1="40" y1="90" x2="460" y2="90" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4" />
+                  <text x="465" y="94" fill="#666" font-size="11" font-family="'Space Mono', monospace">CAP HEIGHT</text>
+
+                  <line x1="40" y1="430" x2="460" y2="430" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4" />
+                  <text x="465" y="434" fill="#666" font-size="11" font-family="'Space Mono', monospace">BASELINE</text>
+
+                  <!-- Group: Main Vertical Stem (Thick Straight Stroke) -->
+                  <g class="interactive-stroke-zone" id="zone-stem" data-part="Vertical Stem" data-type="Straight • Vertical" data-thickness="Thick (Primary Weight)" data-desc="The main structural pillar of the letter. Carries the maximum vertical weight.">
+                    <rect x="110" y="90" width="56" height="340" rx="3" class="stroke-shape" />
+                    <text x="75" y="270" class="svg-label" text-anchor="middle">Stem</text>
+                  </g>
+
+                  <!-- Group: Top Serif with Bracket -->
+                  <g class="interactive-stroke-zone" id="zone-serif-top" data-part="Top Bilateral Serif" data-type="Horizontal • Bracketed" data-thickness="Medium-Thin Terminal" data-desc="Horizontal projection resting at the cap height, connected to the stem via curved brackets.">
+                    <polygon points="70,90 206,90 206,105 166,115 166,115 110,115 70,105" class="stroke-shape" />
+                    <text x="138" y="75" class="svg-label" text-anchor="middle">Top Serif</text>
+                  </g>
+
+                  <!-- Group: Upper Horizontal Bar (Hairline Thin Stroke) -->
+                  <g class="interactive-stroke-zone" id="zone-bar" data-part="Upper Horizontal Stroke" data-type="Straight • Horizontal" data-thickness="Hairline / Thin" data-desc="Exhibits high contrast against the heavy vertical stem. Essential for Roman proportion.">
+                    <path d="M 166 90 L 320 90 L 320 108 L 166 108 Z" class="stroke-shape" />
+                    <text x="245" y="75" class="svg-label" text-anchor="middle">Thin Bar (Contrast)</text>
+                  </g>
+
+                  <!-- Group: Curved Closed Bowl -->
+                  <g class="interactive-stroke-zone" id="zone-bowl" data-part="Curved Bowl" data-type="Curved • Closed" data-thickness="Modulated (Thick Apex to Thin Junctions)" data-desc="A closed curved stroke sweeping outward to form the upper loop, tapering at junctions.">
+                    <path d="M 320 90 C 410 90, 410 260, 320 260 L 166 260 L 166 242 L 305 242 C 375 242, 375 108, 305 108 Z" class="stroke-shape" />
+                    <text x="420" y="175" class="svg-label" text-anchor="start">Curved Bowl</text>
+                  </g>
+
+                  <!-- Group: Diagonal Leg (Straight Diagonal Stroke) -->
+                  <g class="interactive-stroke-zone" id="zone-leg" data-part="Diagonal Leg" data-type="Straight • Diagonal" data-thickness="Thick Main Stroke" data-desc="Dynamic diagonal stroke supporting the right-hand counter-balance of the letter 'R'.">
+                    <polygon points="230,245 285,245 425,430 360,430" class="stroke-shape" />
+                    <text x="385" y="340" class="svg-label" text-anchor="middle">Diagonal Leg</text>
+                  </g>
+
+                  <!-- Group: Base Foot Serif -->
+                  <g class="interactive-stroke-zone" id="zone-serif-base" data-part="Base Bracketed Serif" data-type="Horizontal Terminal" data-thickness="Horizontal Serif" data-desc="Anchors the vertical stem firmly to the reading baseline.">
+                    <polygon points="65,430 210,430 210,415 166,405 110,405 65,415" class="stroke-shape" />
+                    <text x="138" y="455" class="svg-label" text-anchor="middle">Base Serif & Bracket</text>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Live Dynamic Readout Box -->
+              <div class="anatomy-readout" id="anatomy-readout">
+                <div class="ar-header">
+                  <span class="ar-name" id="ar-name">Hover any letter zone</span>
+                  <span class="ar-type" id="ar-type">Interactive Anatomy</span>
+                </div>
+                <div class="ar-thickness" id="ar-thickness">Thickness: —</div>
+                <div class="ar-desc" id="ar-desc">Move your cursor over the stem, bar, curved bowl, diagonal leg, or serifs to inspect how strokes create contrast and letterform architecture.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 5: STRESS
+           ========================================== -->
+      <!-- Presenter Note:
+           "Next, we explore Stress—one of the most critical concepts in typography. In typography, stress refers to the direction where the thickest part of a letter appears. That is, stress shows where the pressure was applied when the letter was written, directly inherited from the broad-nib pen. The four types from our source are: Vertical Stress (Bodoni, formal), Diagonal Stress (Garamond, handwritten), Horizontal Stress (rare/decorative), and No Stress or Monolinear (Helvetica, uniform)."
+      -->
+      <section class="slide" id="slide-5" data-slide="5" data-title="Stress in Letterforms">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">04 / AXIS OF EMPHASIS</div>
+            <h2 class="slide-heading">The Four Types of <span class="text-gradient">Stress</span></h2>
+
+            <div class="statement-card">
+              <p class="statement-text">
+                <strong>Stress</strong> refers to the <em>direction where the thickest part of a letter appears</em>. It reveals where calligraphic pressure was applied.
+              </p>
+            </div>
+
+            <!-- Stress Selector Tabs -->
+            <div class="stress-tabs-list">
+              <button class="stress-tab-btn active" data-stress="diagonal">
+                <div class="stb-top">
+                  <span class="stb-name">1. Diagonal (Oblique) Stress</span>
+                  <span class="stb-font">Garamond, Caslon</span>
+                </div>
+                <p class="stb-desc">Thick-thin contrast follows a diagonal axis (top-left to bottom-right). Common in Old-Style serif. Feels traditional and handwritten.</p>
+              </button>
+
+              <button class="stress-tab-btn" data-stress="vertical">
+                <div class="stb-top">
+                  <span class="stb-name">2. Vertical Stress</span>
+                  <span class="stb-font">Bodoni, Didot</span>
+                </div>
+                <p class="stb-desc">Thick strokes are vertical, thin strokes are horizontal. Common in Modern serif typefaces. Looks formal, architectural, and elegant.</p>
+              </button>
+
+              <button class="stress-tab-btn" data-stress="horizontal">
+                <div class="stb-top">
+                  <span class="stb-name">3. Horizontal Stress</span>
+                  <span class="stb-font">Karloff Negative, Decorative</span>
+                </div>
+                <p class="stb-desc">Thick strokes are horizontal. Rare in body text, often experimental or decorative. Inverts classical calligraphic expectations.</p>
+              </button>
+
+              <button class="stress-tab-btn" data-stress="monolinear">
+                <div class="stb-top">
+                  <span class="stb-name">4. No Stress (Monolinear)</span>
+                  <span class="stb-font">Helvetica, Arial</span>
+                </div>
+                <p class="stb-desc">Strokes have equal thickness all around. Common in Sans-Serif fonts. Imparts neutral, machined, modern clarity.</p>
+              </button>
+            </div>
+
+            <div class="stress-summary-pill">
+              <strong>Why Stress Matters:</strong> Affects readability • Dictates personality • Guides font choice for tone & purpose.
+            </div>
+          </div>
+
+          <!-- Interactive Stress Letter 'O' Visualizer -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">DYNAMIC STRESS SIMULATOR</span>
+                <span class="card-badge" id="stress-badge-axis">Axis: ~ -20° Diagonal</span>
+              </div>
+
+              <!-- Animated SVG Letter 'O' with Protractor/Axis line -->
+              <div class="stress-svg-container">
+                <svg id="stress-svg" viewBox="0 0 400 400" class="stress-o-svg">
+                  <!-- Protractor Circle Guides -->
+                  <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" />
+                  <circle cx="200" cy="200" r="120" fill="none" stroke="rgba(255,255,255,0.04)" />
+                  
+                  <!-- Angle Axis Line with markers -->
+                  <line id="stress-axis-line" x1="120" y1="50" x2="280" y2="350" stroke="#ff5e62" stroke-width="2.5" stroke-dasharray="6 4" />
+                  <circle id="stress-axis-marker-1" cx="120" cy="50" r="5" fill="#ff5e62" />
+                  <circle id="stress-axis-marker-2" cx="280" cy="350" r="5" fill="#ff5e62" />
+
+                  <!-- Dynamic Letter 'O' Compound Path -->
+                  <!-- Will morph smooth outer and inner contours based on selected stress -->
+                  <path id="stress-letter-path" class="stress-letter-shape" fill="url(#grad-stem)" fill-rule="evenodd"
+                    d="M 200,40 C 300,40 360,110 360,200 C 360,290 300,360 200,360 C 100,360 40,290 40,200 C 40,110 100,40 200,40 Z
+                       M 215,85 C 160,85 140,135 140,200 C 140,265 160,315 215,315 C 245,315 260,265 260,200 C 260,135 245,85 215,85 Z" />
+
+                  <!-- Text label inside SVG -->
+                  <text id="svg-stress-label" x="200" y="385" text-anchor="middle" fill="#888" font-size="12" font-family="'Space Mono', monospace">
+                    DIAGONAL AXIS (GARAMOND)
+                  </text>
+                </svg>
+              </div>
+
+              <!-- Interactive Controller Buttons -->
+              <div class="stress-control-bar">
+                <button class="btn-stress-select active" data-type="diagonal">Diagonal</button>
+                <button class="btn-stress-select" data-type="vertical">Vertical</button>
+                <button class="btn-stress-select" data-type="horizontal">Horizontal</button>
+                <button class="btn-stress-select" data-type="monolinear">Monolinear</button>
+              </div>
+
+              <!-- Stress Profile Info -->
+              <div class="stress-info-panel" id="stress-info-panel">
+                <div class="sip-title" id="sip-title">Diagonal Stress (Oblique)</div>
+                <div class="sip-body" id="sip-body">
+                  Simulates the natural 45° angle of the human hand holding a broad-nib reed or quill. The thinnest parts appear at the upper-right and lower-left, while maximum weight settles along the diagonal.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 6: SERIF AND BRACKET
+           ========================================== -->
+      <!-- Presenter Note:
+           "Slide 6 focuses on Serifs and Brackets. As defined in our text: A serif is a small decorative stroke or line attached to the ends of letters. A bracket refers to the curved or angled stroke that connects the serif to its main stem. Notice how Garamond and Baskerville possess heavy brackets, whereas Bodoni has zero bracketing—its hairline serifs meet the stem at abrupt right angles—and Univers or Helvetica has no serifs at all."
+      -->
+      <section class="slide" id="slide-6" data-slide="6" data-title="Serif and Bracket">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">05 / TERMINAL ARCHITECTURE</div>
+            <h2 class="slide-heading">Serifs & <span class="text-gradient">Brackets</span></h2>
+
+            <div class="statement-card">
+              <p class="statement-text">
+                A <strong>serif</strong> is a small decorative line attached to the ends of letter strokes. A <strong>bracket</strong> is the curved or angled fillet that joins the serif to the main stem.
+              </p>
+            </div>
+
+            <div class="serif-comparison-cards">
+              <div class="scc-item">
+                <div class="scc-badge bracketed">BRACKETED SERIF</div>
+                <h4>Garamond • Baskerville</h4>
+                <p>Curved fillet gently smooths the 90° junction between the stem and horizontal serif. Imparts flow and structural softness.</p>
+              </div>
+              <div class="scc-item">
+                <div class="scc-badge unbracketed">UNBRACKETED SERIF</div>
+                <h4>Bodoni • Didot</h4>
+                <p>Abrupt, razor-sharp perpendicular join without any transitional curve. Produces dramatic, mechanical severity.</p>
+              </div>
+            </div>
+
+            <!-- Interactive Toggles -->
+            <div class="bracket-toggles-card">
+              <div class="btc-header">ANATOMICAL MORPH CONTROLS</div>
+              
+              <div class="toggle-row">
+                <span class="toggle-label">SERIF COMPONENT</span>
+                <div class="switch-container">
+                  <button class="toggle-btn active" id="btn-serif-on">SERIF ON</button>
+                  <button class="toggle-btn" id="btn-serif-off">SERIF OFF (SANS)</button>
+                </div>
+              </div>
+
+              <div class="toggle-row">
+                <span class="toggle-label">BRACKET JUNCTION</span>
+                <div class="switch-container">
+                  <button class="toggle-btn active" id="btn-bracket-on">BRACKETED (CURVED)</button>
+                  <button class="toggle-btn" id="btn-bracket-off">UNBRACKETED (ABRUPT)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Microscope / Zoomable Letter Terminal -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">TERMINAL MICROSCOPE (ZOOM INSPECTION)</span>
+                <span class="card-badge" id="bracket-status-badge">Curved Bracket Active</span>
+              </div>
+
+              <div class="microscope-viewport" id="microscope-viewport">
+                <!-- SVG Zoom View of Stem Foot -->
+                <svg id="bracket-svg" viewBox="0 0 500 450" class="bracket-letter-svg">
+                  <!-- Reticle Grid -->
+                  <circle cx="250" cy="225" r="180" fill="none" stroke="rgba(255,255,255,0.06)" />
+                  <line x1="250" y1="20" x2="250" y2="430" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4" />
+                  <line x1="40" y1="225" x2="460" y2="225" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4" />
+                  
+                  <!-- Main Stem and Serif Shape -->
+                  <!-- Will be dynamically redrawn via JavaScript morph -->
+                  <path id="stem-serif-path" class="terminal-path"
+                    d="M 180,30 L 320,30 L 320,270 Q 320,380 440,390 L 440,410 L 60,410 L 60,390 Q 180,380 180,270 Z" />
+
+                  <!-- Callout Annotations -->
+                  <g id="callout-stem" class="callout-group">
+                    <line x1="320" y1="120" x2="410" y2="100" stroke="#4daafc" stroke-width="1.5" />
+                    <circle cx="320" cy="120" r="4" fill="#4daafc" />
+                    <text x="420" y="105" fill="#4daafc" font-size="12" font-family="'Space Mono', monospace">MAIN STEM</text>
+                  </g>
+
+                  <g id="callout-bracket" class="callout-group">
+                    <path d="M 320,310 Q 335,370 380,385" fill="none" stroke="#d4af37" stroke-width="2.5" />
+                    <line x1="360" y1="360" x2="420" y2="330" stroke="#d4af37" stroke-width="1.5" />
+                    <circle cx="360" cy="360" r="4" fill="#d4af37" />
+                    <text x="430" y="335" fill="#d4af37" font-size="12" font-family="'Space Mono', monospace">BRACKET (FILLET)</text>
+                  </g>
+
+                  <g id="callout-serif" class="callout-group">
+                    <line x1="100" y1="410" x2="100" y2="440" stroke="#ff5e62" stroke-width="1.5" />
+                    <circle cx="100" cy="410" r="4" fill="#ff5e62" />
+                    <text x="110" y="445" fill="#ff5e62" font-size="12" font-family="'Space Mono', monospace">SERIF TERMINAL</text>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="microscope-footer">
+                <div class="mf-left">
+                  <span class="mf-label">CURRENT FORM:</span>
+                  <span class="mf-val" id="current-form-text">Old Style / Transitional Bracketed Serif</span>
+                </div>
+                <button class="btn-micro" id="btn-reset-bracket">Reset View</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 7: OLD STYLE
+           ========================================== -->
+      <!-- Presenter Note:
+           "We now begin our deep dive into each historic era, starting with Old Style. Exemplified by Garamond from 1617 France, as well as Palatino, Caslon 224, and Weiss from Figure 12.5. Old Style is characterized by very little contrast between strokes, heavy brackets, and extreme diagonal stress. Because these letterforms were modeled on handwritten calligraphy, they feel deeply 'human' and far less 'machined'."
+      -->
+      <section class="slide" id="slide-7" data-slide="7" data-title="Old Style Typefaces">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">06 / HISTORIC ERA 01</div>
+            <h2 class="slide-heading">Old Style <span class="text-gradient">Typefaces</span></h2>
+            
+            <div class="era-badge-row">
+              <span class="era-year-badge">1617</span>
+              <span class="era-origin-badge">Garamond (France)</span>
+            </div>
+
+            <ul class="key-points-list">
+              <li>
+                <div class="point-bullet">01</div>
+                <div>
+                  <strong>Low Stroke Contrast:</strong> Very subtle, modest difference between thick and thin strokes across all letters.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">02</div>
+                <div>
+                  <strong>Heavy Brackets:</strong> Generous curved fillets supporting the serifs, providing structural strength in early metal casting.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">03</div>
+                <div>
+                  <strong>Extreme Diagonal Stress:</strong> The axis of weight follows the natural 45° forward angle of the calligrapher’s hand.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">04</div>
+                <div>
+                  <strong>Human vs. Machined:</strong> Overall aesthetic feels organic, warm, and distinctly handcrafted rather than geometrically manufactured.
+                </div>
+              </li>
+            </ul>
+
+            <div class="source-examples-box">
+              <div class="seb-title">NOTABLE EXAMPLES FROM SOURCE (FIGURE 12.5):</div>
+              <div class="seb-tags">
+                <span class="seb-tag active">Garamond</span>
+                <span class="seb-tag">Palatino</span>
+                <span class="seb-tag">Caslon 224</span>
+                <span class="seb-tag">Weiss</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Comparison: Old Style vs Modern Split View -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">SPECIMEN COMPARISON: OLD STYLE vs MODERN</span>
+                <span class="card-hint">Drag slider to compare</span>
+              </div>
+
+              <!-- Side by Side / Morph Box -->
+              <div class="split-specimen-viewport" id="split-specimen-viewport">
+                <!-- Large Garamond Specimen -->
+                <div class="specimen-half oldstyle-side">
+                  <div class="sh-watermark">1617</div>
+                  <div class="sh-letter font-garamond">Abg</div>
+                  <div class="sh-caption">
+                    <strong>Garamond (Old Style)</strong>
+                    <span>Heavy brackets • Gentle contrast • Diagonal axis</span>
+                  </div>
+                </div>
+
+                <!-- Modern Overlay / Divider -->
+                <div class="specimen-half modern-side">
+                  <div class="sh-watermark">1788</div>
+                  <div class="sh-letter font-bodoni">Abg</div>
+                  <div class="sh-caption">
+                    <strong>Bodoni (Modern)</strong>
+                    <span>No brackets • Extreme contrast • Vertical axis</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Selector to compare with other eras -->
+              <div class="comparison-switch-bar">
+                <span>Direct Comparison Target:</span>
+                <div class="btn-group-sm">
+                  <button class="btn-comp active" data-target="bodoni">vs Modern (Bodoni)</button>
+                  <button class="btn-comp" data-target="baskerville">vs Transitional (Baskerville)</button>
+                  <button class="btn-comp" data-target="helvetica">vs Sans Serif (Helvetica)</button>
+                </div>
+              </div>
+
+              <div class="specimen-callout-quote">
+                “Old Style typefaces generally feel more <em>human</em> and less <em>machined</em>.”
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 8: TRANSITIONAL
+           ========================================== -->
+      <!-- Presenter Note:
+           "Slide 8 covers Transitional Typefaces. As the name reveals, Transitional typefaces bridge the gap between Old Style and Modern. Introduced in England around 1757 by John Baskerville—with other classics like Times Roman, Perpetua, and Stone Serif. They feature more refined serifs, greater stroke contrast than Old Style (though less extreme than Modern), a more vertical stress, and heavy bracketing. They mark the turning point toward industrial precision."
+      -->
+      <section class="slide" id="slide-8" data-slide="8" data-title="Transitional Typefaces">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">07 / HISTORIC ERA 02</div>
+            <h2 class="slide-heading">Transitional <span class="text-gradient">Typefaces</span></h2>
+            
+            <div class="era-badge-row">
+              <span class="era-year-badge">1757</span>
+              <span class="era-origin-badge">Baskerville (England)</span>
+            </div>
+
+            <ul class="key-points-list">
+              <li>
+                <div class="point-bullet">01</div>
+                <div>
+                  <strong>The Historic Bridge:</strong> Bridges the evolutionary gap between warm Old Style and austere Modern typefaces.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">02</div>
+                <div>
+                  <strong>Refined Serifs & Increased Contrast:</strong> Sharper, more calculated serifs with noticeably higher stroke contrast than Garamond.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">03</div>
+                <div>
+                  <strong>Shift to Vertical Stress:</strong> Weight distribution rotates upright toward a near-vertical axis, moving away from the diagonal slant.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">04</div>
+                <div>
+                  <strong>Retains Bracketing:</strong> Still incorporates heavy bracketing, preserving humanist warmth despite a more machined precision.
+                </div>
+              </li>
+            </ul>
+
+            <div class="source-examples-box">
+              <div class="seb-title">NOTABLE EXAMPLES FROM SOURCE (FIGURE 12.6):</div>
+              <div class="seb-tags">
+                <span class="seb-tag active">Baskerville</span>
+                <span class="seb-tag">Times Roman</span>
+                <span class="seb-tag">Perpetua</span>
+                <span class="seb-tag">Stone Serif</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive 3-Era Evolutionary Morph -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">EVOLUTIONARY MORPH: OLD STYLE → TRANSITIONAL → MODERN</span>
+                <span class="card-hint">Step through the bridge</span>
+              </div>
+
+              <!-- Interactive Stepper -->
+              <div class="stepper-nav">
+                <button class="step-btn" data-step="1">1. Old Style (1617)</button>
+                <button class="step-btn active" data-step="2">2. Transitional (1757)</button>
+                <button class="step-btn" data-step="3">3. Modern (1788)</button>
+              </div>
+
+              <div class="morph-display-box" id="morph-display-box">
+                <div class="morph-letter-large font-baskerville" id="morph-letter">Baskerville</div>
+                <div class="morph-tagline" id="morph-tagline">“The Bridge: Balanced Contrast & Upright Stress”</div>
+              </div>
+
+              <!-- Metric comparison bar -->
+              <div class="metrics-grid">
+                <div class="metric-item">
+                  <span class="metric-label">CONTRAST LEVEL</span>
+                  <div class="metric-meter"><div class="mm-fill" id="mm-contrast" style="width: 60%;"></div></div>
+                  <span class="metric-val" id="mv-contrast">Medium-High</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">AXIS ORIENTATION</span>
+                  <div class="metric-meter"><div class="mm-fill" id="mm-axis" style="width: 80%;"></div></div>
+                  <span class="metric-val" id="mv-axis">Near Vertical</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">BRACKET THICKNESS</span>
+                  <div class="metric-meter"><div class="mm-fill" id="mm-bracket" style="width: 70%;"></div></div>
+                  <span class="metric-val" id="mv-bracket">Retained Heavy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 9: MODERN TYPEFACES
+           ========================================== -->
+      <!-- Presenter Note:
+           "Slide 9 brings us to Modern Typefaces. It is crucial to remember that Modern typefaces are NOT modern by today's calendar! They emerged in the late eighteenth century, around 1788, led by Italian master Giambattista Bodoni. Other examples include Didot, Fenice, and Bernard Modern. They represented a radical departure from all previous letterforms: exact, mathematical, extreme contrast between thick stems and razor hairlines, and little to no bracketing with strictly vertical stress."
+      -->
+      <section class="slide" id="slide-9" data-slide="9" data-title="Modern Typefaces">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">08 / HISTORIC ERA 03</div>
+            <h2 class="slide-heading">Modern <span class="text-gradient">Typefaces</span></h2>
+            
+            <div class="era-badge-row">
+              <span class="era-year-badge">1788</span>
+              <span class="era-origin-badge">Bodoni (Italy) • Giambattista Bodoni</span>
+            </div>
+
+            <ul class="key-points-list">
+              <li>
+                <div class="point-bullet">01</div>
+                <div>
+                  <strong>Not Modern by Our Timetable:</strong> Created in the late 18th century, representing a revolutionary break from calligraphic tradition.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">02</div>
+                <div>
+                  <strong>Extreme Stroke Contrast:</strong> Spectacular disparity between massive solid stems and razor-thin hairline strokes.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">03</div>
+                <div>
+                  <strong>Unbracketed Hairline Serifs:</strong> Serifs attach at crisp 90° right angles with little or no bracketing.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">04</div>
+                <div>
+                  <strong>Strict Vertical Architecture:</strong> No noticeable stress angle; perfectly plumb vertical emphasis creating formal grandeur.
+                </div>
+              </li>
+            </ul>
+
+            <div class="source-examples-box">
+              <div class="seb-title">NOTABLE EXAMPLES FROM SOURCE (FIGURE 12.7):</div>
+              <div class="seb-tags">
+                <span class="seb-tag active">Bodoni</span>
+                <span class="seb-tag">Didot</span>
+                <span class="seb-tag">Fenice</span>
+                <span class="seb-tag">Bernard Modern</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Extreme Contrast Caliper Display -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">CONTRAST CALIPER (THICK VS THIN RATIO)</span>
+                <span class="card-badge">Extreme 10:1 Ratio</span>
+              </div>
+
+              <div class="caliper-display-box">
+                <div class="caliper-letter font-bodoni">M</div>
+
+                <!-- Callout pointers on the M -->
+                <div class="caliper-callout c-thick">
+                  <div class="c-line"></div>
+                  <div class="c-tag">Heavy Stem (Thick)</div>
+                </div>
+
+                <div class="caliper-callout c-thin">
+                  <div class="c-line"></div>
+                  <div class="c-tag">Hairline Stroke (Thin)</div>
+                </div>
+
+                <div class="caliper-callout c-serif">
+                  <div class="c-line"></div>
+                  <div class="c-tag">Unbracketed 90° Hairline Serif</div>
+                </div>
+              </div>
+
+              <!-- Interactive Caliper Slider -->
+              <div class="caliper-controls">
+                <label for="contrast-slider">Simulate Stroke Contrast Ratio:</label>
+                <div class="slider-row">
+                  <span>Subtle (Old Style)</span>
+                  <input type="range" id="contrast-slider" min="1" max="10" value="10" step="1">
+                  <span>Extreme (Bodoni)</span>
+                </div>
+                <div class="slider-caption" id="slider-caption">Current: Extreme Contrast (Modern Aesthetic)</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 10: SLAB SERIF (EGYPTIAN)
+           ========================================== -->
+      <!-- Presenter Note:
+           "Slide 10 addresses Slab Serif, also known as Egyptian or Square Serif. First emerging in the late nineteenth and early twentieth centuries—exemplified by Century Expanded in 1894 US. Slabs were engineered for maximum visual clarity in crudely printed industrial posters, billboards, and newspapers. Early slabs had no bracketing and uniform thick strokes. Later, Clarendons reintroduced slight contrast and subtle brackets."
+      -->
+      <section class="slide" id="slide-10" data-slide="10" data-title="Slab Serif / Egyptian">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">09 / HISTORIC ERA 04</div>
+            <h2 class="slide-heading">Slab Serif <span class="text-gradient">Typefaces</span></h2>
+            
+            <div class="era-badge-row">
+              <span class="era-year-badge">1894</span>
+              <span class="era-origin-badge">Century Expanded (US) • Egyptian / Square Serif</span>
+            </div>
+
+            <ul class="key-points-list">
+              <li>
+                <div class="point-bullet">01</div>
+                <div>
+                  <strong>Heavy Blocky Serifs:</strong> Characterized by prominent, rectangular square serifs with consistent stroke weight.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">02</div>
+                <div>
+                  <strong>Advertising & Industrial Clarity:</strong> Engineered during the Industrial Revolution for legibility on crudely printed posters, flyers, and newspapers.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">03</div>
+                <div>
+                  <strong>Early vs. Clarendons:</strong> Early designs had zero bracketing and zero contrast. Later, <em>Clarendons</em> reintroduced subtle brackets and refined stroke contrast.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">04</div>
+                <div>
+                  <strong>Modern Usage:</strong> Blends both Clarendon sophistication and bold non-bracketed industrial slab geometry.
+                </div>
+              </li>
+            </ul>
+
+            <div class="source-examples-box">
+              <div class="seb-title">NOTABLE EXAMPLES FROM SOURCE:</div>
+              <div class="seb-tags">
+                <span class="seb-tag active">Century Expanded</span>
+                <span class="seb-tag">Clarendon</span>
+                <span class="seb-tag">Melior</span>
+                <span class="seb-tag">Rockwell</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Slab Comparator -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">SLAB SERIF vs CLASSIC SERIF COMPARATOR</span>
+                <span class="card-hint">Toggle slab geometry</span>
+              </div>
+
+              <div class="slab-specimen-box">
+                <div class="slab-display-letter font-slab" id="slab-letter-specimen">H</div>
+                <div class="slab-meta-tag" id="slab-meta-tag">Blocky Rectangular Slabs • High Impact</div>
+              </div>
+
+              <!-- Interactive Mode Selectors -->
+              <div class="slab-mode-buttons">
+                <button class="btn-slab-mode active" data-mode="slab">
+                  <strong>Industrial Slab Serif</strong>
+                  <span>Heavy rectangular slabs, bold punch</span>
+                </button>
+                <button class="btn-slab-mode" data-mode="clarendon">
+                  <strong>Clarendon Style</strong>
+                  <span>Slight bracket, refined contrast</span>
+                </button>
+                <button class="btn-slab-mode" data-mode="delicate">
+                  <strong>Classic Roman Serif</strong>
+                  <span>Thin tapered bracketed serif</span>
+                </button>
+              </div>
+
+              <div class="newspaper-ad-simulation">
+                <div class="nas-label">HISTORICAL APPLICATION:</div>
+                <div class="nas-headline">THE INDUSTRIAL PRESS (1894)</div>
+                <div class="nas-sub">Engineered to survive coarse newsprint inks without breakdown.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 11: SANS SERIF TYPEFACES
+           ========================================== -->
+      <!-- Presenter Note:
+           "Slide 11 examines Sans Serif—literally 'without serifs'. Lacking ornamental feet, these letterforms consist of simple machined shapes that appear uniform in almost every way. Though existing in the early 19th century, they became popular a century later through the Bauhaus and Art Deco movements. Because sans-serif typefaces lack horizontal serifs to guide the reader's eye, they tend to read vertically; typographers solve this by adding more leading or space between shorter lines. Our source specifically highlights Figure 12.9 with four classic examples: Univers, Helvetica, Gill Sans, and Franklin Gothic."
+      -->
+      <section class="slide" id="slide-11" data-slide="11" data-title="Sans Serif Typefaces">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">10 / HISTORIC ERA 05</div>
+            <h2 class="slide-heading">Sans Serif <span class="text-gradient">Typefaces</span></h2>
+            
+            <div class="era-badge-row">
+              <span class="era-year-badge">1957</span>
+              <span class="era-origin-badge">Helvetica & Univers • Bauhaus & Art Deco Influence</span>
+            </div>
+
+            <ul class="key-points-list">
+              <li>
+                <div class="point-bullet">01</div>
+                <div>
+                  <strong>Simple Machined Shapes:</strong> Clean, unadorned terminals and uniform stroke appearance without extra flourishes.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">02</div>
+                <div>
+                  <strong>Bauhaus & Art Deco Catalyst:</strong> Around since early 19th century, but popularized 100 years later by modern design movements.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">03</div>
+                <div>
+                  <strong>The Vertical Reading Tendency:</strong> Because of the lack of serifs, sans serifs tend to read vertically rather than the traditional horizontal flow.
+                </div>
+              </li>
+              <li>
+                <div class="point-bullet">04</div>
+                <div>
+                  <strong>The Leading Solution:</strong> Adding more <em>leading</em> (space between lines) restores effortless horizontal reading continuity.
+                </div>
+              </li>
+            </ul>
+
+            <!-- Figure 12.9 Four Examples from Source -->
+            <div class="source-examples-box">
+              <div class="seb-title">FIGURE 12.9: FOUR EXAMPLES OF SANS SERIF FROM SOURCE</div>
+              <div class="seb-tags" id="sans-examples-tags">
+                <span class="seb-tag active" data-sans="univers">1. Univers</span>
+                <span class="seb-tag" data-sans="helvetica">2. Helvetica</span>
+                <span class="seb-tag" data-sans="gillsans">3. Gill Sans</span>
+                <span class="seb-tag" data-sans="franklingothic">4. Franklin Gothic</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Sans Specimen & Leading Simulator -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">FIGURE 12.9 SPECIMEN & LEADING SIMULATOR</span>
+                <span class="card-badge" id="leading-badge">Leading: Normal (1.5)</span>
+              </div>
+
+              <!-- Live Specimen Display for the 4 Examples -->
+              <div class="sans-specimen-banner" id="sans-specimen-banner">
+                <div class="ssb-font-name" id="ssb-font-name">Univers</div>
+                <div class="ssb-alphabet" id="ssb-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz</div>
+              </div>
+
+              <!-- Reading Flow Paragraph -->
+              <div class="reading-flow-box" id="reading-flow-box">
+                <p class="reading-sample-paragraph font-sans" id="reading-sample-text">
+                  Typography establishes an architectural reading hierarchy. Without serifs, the eye encounters clean vertical terminals. By opening the vertical leading between lines, we guide the reader’s gaze seamlessly across the page.
+                </p>
+              </div>
+
+              <!-- Interactive Controls for Leading Slider -->
+              <div class="reading-controls-bar">
+                <div class="rc-toggle-group">
+                  <button class="btn-micro active" id="btn-toggle-sans">Sans Serif (Clean)</button>
+                  <button class="btn-micro" id="btn-toggle-serif-read">Serif (Traditional)</button>
+                </div>
+
+                <div class="leading-slider-wrapper">
+                  <div class="lsw-label">
+                    <span>Adjust Leading (Line Spacing):</span>
+                    <span id="leading-val-text">1.5x</span>
+                  </div>
+                  <input type="range" id="leading-slider" min="1.0" max="2.4" step="0.1" value="1.5">
+                </div>
+              </div>
+
+              <div class="reading-insight-note">
+                <strong>Source Principle:</strong> “Adding more leading or space between shorter lines of type helped with the readability of Sans Serif typefaces.”
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 12: TYPE STYLES — WEIGHT VARIATIONS
+           ========================================== -->
+      <!-- Presenter Note:
+           "Moving to Slide 12: Type Styles. As defined in our study material: Type style usually refers to the variety of weights or widths of the letters in a specific typeface. Many names are given to the same weight or width. The three primary weight classifications from our source are: 1. Medium, often referred to as regular, book, or normal, which is the basic standard weight; 2. Light, sometimes called thin, which is the lighter version; and 3. Bold, a general term for heavier variations, spanning demi-bold, semi-bold, heavy, extrabold, ultra, and black."
+      -->
+      <section class="slide" id="slide-12" data-slide="12" data-title="Type Styles: Weight">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">11 / SYSTEMATIC VARIATIONS (PART 1)</div>
+            <h2 class="slide-heading">Type Styles: <span class="text-gradient">Weight</span></h2>
+
+            <div class="statement-card">
+              <p class="statement-text">
+                <strong>Type style</strong> usually refers to the variety of <em>weights or widths</em> of the letters in a specific typeface. Many names are given to the same weight or width of a letterform.
+              </p>
+            </div>
+
+            <!-- The Three Primary Weights from Source -->
+            <div class="weight-definitions-list">
+              <div class="wd-card">
+                <div class="wd-head">
+                  <span class="wd-num">1</span>
+                  <h4>Medium (Standard Baseline)</h4>
+                </div>
+                <p>Often referred to as <strong>regular</strong>, <strong>book</strong>, or <strong>normal</strong>. It represents the most basic or standard weight of a typeface, engineered for sustained text readability.</p>
+              </div>
+
+              <div class="wd-card">
+                <div class="wd-head">
+                  <span class="wd-num">2</span>
+                  <h4>Light (Thin Variant)</h4>
+                </div>
+                <p>Light may sometimes be called <strong>thin</strong>. It is the lighter, thinner version of the medium typeface, often used for elegant display headings.</p>
+              </div>
+
+              <div class="wd-card">
+                <div class="wd-head">
+                  <span class="wd-num">3</span>
+                  <h4>Bold (Heavier Spectrum)</h4>
+                </div>
+                <p>A general term for a heavier variation. Depending on heaviness, specialized terms are used: <strong>demi-bold</strong>, <strong>semi-bold</strong>, <strong>heavy</strong>, <strong>extrabold</strong>, <strong>ultra</strong>, or <strong>black</strong>.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Font Weight Controller -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">INTERACTIVE WEIGHT CONTROLLER</span>
+                <span class="card-badge" id="active-weight-badge">Weight: 700 (Bold)</span>
+              </div>
+
+              <!-- Live Typography Preview Text -->
+              <div class="weight-preview-stage">
+                <div class="weight-hero-letter" id="weight-hero-letter">Aa</div>
+                <div class="weight-sample-text" id="weight-sample-text">
+                  Design Architecture & Visual Hierarchy
+                </div>
+              </div>
+
+              <!-- The Core 3 Weights from Source -->
+              <div class="weight-buttons-grid">
+                <button class="btn-weight" data-weight="300" data-name="Light" data-desc="Light (Thin): The lighter, thinner version of the medium typeface. Ideal for large titles.">2. Light</button>
+                <button class="btn-weight" data-weight="500" data-name="Medium" data-desc="Medium (Regular / Book / Normal): The basic standard weight of a typeface.">1. Medium</button>
+                <button class="btn-weight active" data-weight="700" data-name="Bold" data-desc="Bold: General term for heavier variations, creating powerful contrast.">3. Bold</button>
+              </div>
+
+              <!-- Sub-variations of Bold from Source -->
+              <div class="bold-grades-container">
+                <span class="bg-label">Sub-variations of Bold (from study material):</span>
+                <div class="btn-group-grades">
+                  <button class="btn-grade" data-weight="600" data-name="Semi-bold">Semi-bold</button>
+                  <button class="btn-grade" data-weight="650" data-name="Demi-bold">Demi-bold</button>
+                  <button class="btn-grade" data-weight="800" data-name="Heavy">Heavy</button>
+                  <button class="btn-grade" data-weight="850" data-name="Extra-bold">Extra-bold</button>
+                  <button class="btn-grade" data-weight="900" data-name="Black">Black / Ultra</button>
+                </div>
+              </div>
+
+              <div class="weight-desc-card" id="weight-desc-card">
+                <strong>Bold (General Term):</strong> Expands stroke density significantly to establish clear typographic hierarchy.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 13: TYPE STYLES — WIDTH VARIATIONS & UNIVERS MATRIX
+           ========================================== -->
+      <!-- Presenter Note:
+           "Slide 13 expands Type Styles into Width variations: Condensed and Extended. As defined in our text: Condensed, also referred to as compressed or narrow, gives letterforms the appearance of a vertical line direction. Conversely, Extended or expanded is wider than the standard medium typeface; because of the emphasis on width, it creates a distinct horizontal line direction. In Figure 12.10, our source demonstrates Adrian Frutiger's iconic typeface Univers, showing how light, medium, bold, condensed, bold condensed, extended, and bold extended create a complete two-dimensional matrix."
+      -->
+      <section class="slide" id="slide-13" data-slide="13" data-title="Type Styles: Width & Univers">
+        <div class="slide-inner two-col-layout">
+          
+          <div class="col-content">
+            <div class="eyebrow-tag">11 / SYSTEMATIC VARIATIONS (PART 2)</div>
+            <h2 class="slide-heading">Width: <span class="text-gradient">Condensed & Extended</span></h2>
+
+            <div class="statement-card">
+              <p class="statement-text">
+                Width dictates letterform proportions, altering horizontal and vertical eye flow across words and text blocks.
+              </p>
+            </div>
+
+            <!-- The Two Width Categories from Source -->
+            <div class="width-definitions-list">
+              <div class="wd-card width-card">
+                <div class="wd-head">
+                  <span class="wd-num">4</span>
+                  <h4>Condensed (Compressed / Narrow)</h4>
+                </div>
+                <p>Also referred to as <strong>compressed</strong> or <strong>narrow</strong>. The narrow version of a typeface that gives letterforms the distinct appearance of a <strong>vertical line direction</strong>. Perfect for saving horizontal space in headlines.</p>
+                <div class="flow-indicator vertical-flow">
+                  <span class="fi-arrow">↕</span>
+                  <span class="fi-label">Appearance of a Vertical Line Direction</span>
+                </div>
+              </div>
+
+              <div class="wd-card width-card">
+                <div class="wd-head">
+                  <span class="wd-num">5</span>
+                  <h4>Extended (Expanded)</h4>
+                </div>
+                <p>Extended or <strong>expanded</strong> version of a typeface is wider than the standard medium typeface. Because of the emphasis on width, it creates a prominent <strong>horizontal line direction</strong> across the line.</p>
+                <div class="flow-indicator horizontal-flow">
+                  <span class="fi-arrow">↔</span>
+                  <span class="fi-label">Appearance of a Horizontal Line Direction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Univers Matrix (Figure 12.10) -->
+          <div class="col-interactive">
+            <div class="interactive-card">
+              <div class="card-header">
+                <span class="card-title">FIGURE 12.10: UNIVERS TYPESTYLE MATRIX</span>
+                <span class="card-badge" id="univers-active-badge">Univers Medium</span>
+              </div>
+
+              <!-- Live Interactive Specimen Display -->
+              <div class="univers-preview-stage" id="univers-preview-stage">
+                <div class="univers-directional-guides" id="univers-directional-guides">
+                  <div class="guide-v"></div>
+                  <div class="guide-h"></div>
+                </div>
+                <div class="univers-display-word" id="univers-display-word">Univers</div>
+                <div class="univers-specimen-sub" id="univers-specimen-sub">Standard Width • Balanced Horizontal / Vertical Flow</div>
+              </div>
+
+              <!-- The 7 Typestyles from Figure 12.10 -->
+              <div class="univers-matrix-grid">
+                <div class="um-col">
+                  <span class="um-col-label">NARROW / CONDENSED</span>
+                  <button class="btn-univers-style" data-style="condensed" data-weight="400" data-stretch="condensed" data-dir="vertical">
+                    <strong>Univers</strong>
+                    <span>condensed</span>
+                  </button>
+                  <button class="btn-univers-style" data-style="bold-condensed" data-weight="700" data-stretch="condensed" data-dir="vertical">
+                    <strong>Univers</strong>
+                    <span>bold condensed</span>
+                  </button>
+                </div>
+
+                <div class="um-col">
+                  <span class="um-col-label">STANDARD / MEDIUM</span>
+                  <button class="btn-univers-style" data-style="light" data-weight="300" data-stretch="normal" data-dir="balanced">
+                    <strong>Univers</strong>
+                    <span>light</span>
+                  </button>
+                  <button class="btn-univers-style active" data-style="medium" data-weight="500" data-stretch="normal" data-dir="balanced">
+                    <strong>Univers</strong>
+                    <span>medium</span>
+                  </button>
+                  <button class="btn-univers-style" data-style="bold" data-weight="700" data-stretch="normal" data-dir="balanced">
+                    <strong>Univers</strong>
+                    <span>bold</span>
+                  </button>
+                </div>
+
+                <div class="um-col">
+                  <span class="um-col-label">WIDE / EXTENDED</span>
+                  <button class="btn-univers-style" data-style="extended" data-weight="400" data-stretch="expanded" data-dir="horizontal">
+                    <strong>Univers</strong>
+                    <span>extended</span>
+                  </button>
+                  <button class="btn-univers-style" data-style="bold-extended" data-weight="700" data-stretch="expanded" data-dir="horizontal">
+                    <strong>Univers</strong>
+                    <span>bold extended</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="univers-desc-box" id="univers-desc-box">
+                <strong>Figure 12.10 Insight:</strong> Click any of the 7 Univers variations to inspect how varying width and weight transforms reading direction and layout density.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           SLIDE 14: FINAL SUMMARY & CONCLUSION
+           ========================================== -->
+      <!-- Presenter Note:
+           "To conclude our seminar: We have traced the complete syntactic hierarchy of typography—from individual strokes, to contrast, stress, and serifs, leading directly to the historic classifications and type styles (both weight and width). In closing, let us always remember: Typography is not merely words on paper or pixels on a screen. Typography is not just text. It is visual design. Thank you for your attention."
+      -->
+      <section class="slide" id="slide-14" data-slide="14" data-title="Final Summary">
+        <div class="slide-inner summary-slide-layout">
+          
+          <div class="summary-top-banner">
+            <div class="eyebrow-tag">12 / SYNTHESIS & CONCLUSION</div>
+            <h2 class="slide-heading">The Complete <span class="text-gradient">Typographic System</span></h2>
+          </div>
+
+          <div class="summary-grid-content">
+            
+            <!-- Left: Anatomical Structural Chain -->
+            <div class="summary-chain-box">
+              <div class="scb-title">ANATOMICAL HIERARCHY</div>
+              <div class="flow-chain-vertical">
+                <div class="chain-node active" data-target-slide="2">
+                  <span class="cn-step">01</span>
+                  <span class="cn-text">TYPEFACE</span>
+                  <span class="cn-hint">Letterform design system</span>
+                </div>
+                <div class="chain-arrow">↓</div>
+                <div class="chain-node" data-target-slide="4">
+                  <span class="cn-step">02</span>
+                  <span class="cn-text">STROKE</span>
+                  <span class="cn-hint">Straight vs Curved lines</span>
+                </div>
+                <div class="chain-arrow">↓</div>
+                <div class="chain-node" data-target-slide="4">
+                  <span class="cn-step">03</span>
+                  <span class="cn-text">CONTRAST</span>
+                  <span class="cn-hint">Thick vs Thin ratio</span>
+                </div>
+                <div class="chain-arrow">↓</div>
+                <div class="chain-node" data-target-slide="5">
+                  <span class="cn-step">04</span>
+                  <span class="cn-text">STRESS</span>
+                  <span class="cn-hint">Direction of weight emphasis</span>
+                </div>
+                <div class="chain-arrow">↓</div>
+                <div class="chain-node" data-target-slide="6">
+                  <span class="cn-step">05</span>
+                  <span class="cn-text">SERIF & BRACKET</span>
+                  <span class="cn-hint">Terminal projections & fillets</span>
+                </div>
+                <div class="chain-arrow">↓</div>
+                <div class="chain-node" data-target-slide="3">
+                  <span class="cn-step">06</span>
+                  <span class="cn-text">HISTORIC CLASSIFICATION</span>
+                  <span class="cn-hint">Chronological development</span>
+                </div>
+                <div class="chain-arrow">↓</div>
+                <div class="chain-node" data-target-slide="12">
+                  <span class="cn-step">07</span>
+                  <span class="cn-text">TYPE STYLE</span>
+                  <span class="cn-hint">Weights (12) & Widths (13)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Historical Lineage & Grand Closing Statement -->
+            <div class="summary-lineage-box">
+              <div class="slb-title">CHRONOLOGICAL PROGRESSION OF CLASSIFICATIONS</div>
+              
+              <div class="lineage-cards-row">
+                <div class="l-card" data-target-slide="7">
+                  <div class="l-year">1617</div>
+                  <div class="l-name">Old Style</div>
+                  <div class="l-font">Garamond</div>
+                  <div class="l-trait">Humanist • Heavy Brackets</div>
+                </div>
+
+                <div class="l-arrow">→</div>
+
+                <div class="l-card" data-target-slide="8">
+                  <div class="l-year">1757</div>
+                  <div class="l-name">Transitional</div>
+                  <div class="l-font">Baskerville</div>
+                  <div class="l-trait">Bridge • Vertical Stress</div>
+                </div>
+
+                <div class="l-arrow">→</div>
+
+                <div class="l-card" data-target-slide="9">
+                  <div class="l-year">1788</div>
+                  <div class="l-name">Modern</div>
+                  <div class="l-font">Bodoni</div>
+                  <div class="l-trait">Extreme Contrast • Hairlines</div>
+                </div>
+
+                <div class="l-arrow">→</div>
+
+                <div class="l-card" data-target-slide="10">
+                  <div class="l-year">1894</div>
+                  <div class="l-name">Slab Serif</div>
+                  <div class="l-font">Century Exp.</div>
+                  <div class="l-trait">Blocky Slabs • Industrial</div>
+                </div>
+
+                <div class="l-arrow">→</div>
+
+                <div class="l-card" data-target-slide="11">
+                  <div class="l-year">1957</div>
+                  <div class="l-name">Sans Serif</div>
+                  <div class="l-font">Helvetica / Univers</div>
+                  <div class="l-trait">No Serifs • Modern Clarity</div>
+                </div>
+              </div>
+
+              <!-- Grand Final Quote Callout -->
+              <div class="final-quote-manifesto">
+                <div class="manifesto-eyebrow">FINAL TAKEAWAY</div>
+                <div class="manifesto-quote">
+                  “Typography is not just text.<br>
+                  <span class="manifesto-highlight">It is visual design.</span>”
+                </div>
+              </div>
+
+              <div class="summary-actions-row">
+                <button class="btn-primary" id="btn-restart-deck">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  <span>Restart Presentation</span>
+                </button>
+                <button class="btn-secondary" id="btn-open-overview-summary">
+                  <span>View All Slides Grid</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Dock -->
+    <footer class="hud-bottom" id="hud-bottom">
+      <div class="hud-bottom-left">
+        <button class="nav-control-btn" id="btn-prev" title="Previous Slide (← / ↑)" aria-label="Previous Slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span class="nav-btn-text">Previous</span>
+        </button>
+      </div>
+
+      <div class="hud-bottom-center">
+        <!-- Interactive Slide Scrubber Indicators -->
+        <div class="slide-dots-indicator" id="slide-dots-indicator">
+          <!-- Dynamically populated 14 dots with tooltips -->
+        </div>
+        <div class="slide-counter-display">
+          <span id="counter-current">01</span>
+          <span class="counter-slash">/</span>
+          <span id="counter-total">14</span>
+        </div>
+      </div>
+
+      <div class="hud-bottom-right">
+        <button class="nav-control-btn btn-next-accent" id="btn-next" title="Next Slide (→ / Space / ↓)" aria-label="Next Slide">
+          <span class="nav-btn-text">Next Slide</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       MODAL: PRESENTER NOTES HUD DRAWER
+       ========================================== -->
+  <aside class="presenter-notes-drawer" id="presenter-notes-drawer" aria-hidden="true">
+    <div class="pnd-header">
+      <div class="pnd-title-group">
+        <span class="pnd-tag">PRESENTER PROMPTER</span>
+        <h3 class="pnd-slide-title" id="pnd-slide-title">Slide 1: Title Screen</h3>
+      </div>
+      <button class="pnd-close-btn" id="btn-close-notes" aria-label="Close Notes">×</button>
+    </div>
+    
+    <div class="pnd-content">
+      <div class="pnd-section-label">WHAT TO SAY TO THE AUDIENCE:</div>
+      <div class="pnd-speech-box" id="pnd-speech-box">
+        <!-- Dynamically updated from current slide presenter notes -->
+      </div>
+
+      <div class="pnd-section-label">KEY TERMINOLOGY TO HIGHLIGHT:</div>
+      <div class="pnd-terms-box" id="pnd-terms-box">
+        <!-- Terminology pills -->
+      </div>
+    </div>
+
+    <div class="pnd-footer">
+      <span>Tip: Press <kbd>N</kbd> on keyboard to toggle anytime</span>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       MODAL: SLIDE OVERVIEW GRID (M)
+       ========================================== -->
+  <div class="slide-overview-modal" id="slide-overview-modal" aria-hidden="true">
+    <div class="som-backdrop" id="som-backdrop"></div>
+    <div class="som-dialog">
+      <div class="som-header">
+        <div>
+          <span class="badge-module">SEMINAR INDEX</span>
+          <h2>Slide Overview (13 Slides)</h2>
+        </div>
+        <button class="som-close-btn" id="btn-close-grid" aria-label="Close Overview">×</button>
+      </div>
+
+      <div class="som-grid" id="som-grid">
+        <!-- Dynamically rendered 13 slide thumbnail cards -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: KEYBOARD SHORTCUTS HELP (?)
+       ========================================== -->
+  <div class="shortcuts-modal" id="shortcuts-modal" aria-hidden="true">
+    <div class="som-backdrop" id="help-backdrop"></div>
+    <div class="shortcuts-dialog">
+      <div class="som-header">
+        <h2>Keyboard Shortcuts</h2>
+        <button class="som-close-btn" id="btn-close-help" aria-label="Close Shortcuts">×</button>
+      </div>
+      <div class="shortcuts-list">
+        <div class="shortcut-row"><kbd>→</kbd> or <kbd>Space</kbd> or <kbd>↓</kbd><span>Next Slide</span></div>
+        <div class="shortcut-row"><kbd>←</kbd> or <kbd>↑</kbd><span>Previous Slide</span></div>
+        <div class="shortcut-row"><kbd>Home</kbd><span>First Slide (Title)</span></div>
+        <div class="shortcut-row"><kbd>End</kbd><span>Last Slide (Summary)</span></div>
+        <div class="shortcut-row"><kbd>T</kbd><span>Toggle White / Dark Theme</span></div>
+        <div class="shortcut-row"><kbd>P</kbd><span>Toggle Projector Visibility Mode</span></div>
+        <div class="shortcut-row"><kbd>F</kbd><span>Toggle Fullscreen Mode</span></div>
+        <div class="shortcut-row"><kbd>N</kbd><span>Toggle Presenter Notes Drawer</span></div>
+        <div class="shortcut-row"><kbd>M</kbd> or <kbd>O</kbd><span>Toggle Slide Overview Grid</span></div>
+        <div class="shortcut-row"><kbd>Esc</kbd><span>Close any Open Modal / Drawer</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
