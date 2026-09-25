@@ -23,6 +23,12 @@
   const btnPrev = document.getElementById('btn-prev');
   const btnNext = document.getElementById('btn-next');
   const btnFullscreen = document.getElementById('btn-fullscreen');
+  const btnToggleTheme = document.getElementById('btn-toggle-theme');
+  const themeBtnText = document.getElementById('theme-btn-text');
+  const iconSun = btnToggleTheme ? btnToggleTheme.querySelector('.icon-sun') : null;
+  const iconMoon = btnToggleTheme ? btnToggleTheme.querySelector('.icon-moon') : null;
+  const btnToggleProjector = document.getElementById('btn-toggle-projector');
+  const projectorBtnText = document.getElementById('projector-btn-text');
 
   // Modals & Drawers
   const btnToggleNotes = document.getElementById('btn-toggle-notes');
@@ -152,10 +158,76 @@
   ];
 
   /* ==========================================================================
+     THEME & DISPLAY MODE CONTROLLERS
+     ========================================================================== */
+
+  function initTheme() {
+    const savedTheme = localStorage.getItem('vdc_theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      applyTheme(savedTheme, false);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      applyTheme('light', false);
+    } else {
+      applyTheme('dark', false);
+    }
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('vdc_theme')) {
+          applyTheme(e.matches ? 'light' : 'dark', false);
+        }
+      });
+    }
+  }
+
+  function applyTheme(theme, save = true) {
+    const isLight = (theme === 'light');
+    if (isLight) {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.body.classList.add('theme-white');
+      if (btnToggleTheme) {
+        btnToggleTheme.classList.add('active-theme-white');
+        btnToggleTheme.setAttribute('title', 'Switch to Dark Theme (T)');
+        btnToggleTheme.setAttribute('aria-label', 'Switch to Dark Theme');
+      }
+      if (iconSun) iconSun.classList.add('hidden');
+      if (iconMoon) iconMoon.classList.remove('hidden');
+      if (themeBtnText) themeBtnText.innerHTML = 'Dark Theme <kbd>T</kbd>';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      document.body.classList.remove('theme-white');
+      if (btnToggleTheme) {
+        btnToggleTheme.classList.remove('active-theme-white');
+        btnToggleTheme.setAttribute('title', 'Switch to White Theme (T)');
+        btnToggleTheme.setAttribute('aria-label', 'Switch to White Theme');
+      }
+      if (iconSun) iconSun.classList.remove('hidden');
+      if (iconMoon) iconMoon.classList.add('hidden');
+      if (themeBtnText) themeBtnText.innerHTML = 'White Theme <kbd>T</kbd>';
+    }
+    if (save) {
+      localStorage.setItem('vdc_theme', isLight ? 'light' : 'dark');
+    }
+  }
+
+  function toggleTheme() {
+    const isCurrentlyLight = document.documentElement.getAttribute('data-theme') === 'light' || document.body.classList.contains('theme-white');
+    applyTheme(isCurrentlyLight ? 'dark' : 'light', true);
+  }
+
+  function toggleProjectorMode() {
+    document.body.classList.toggle('projector-mode');
+    if (btnToggleProjector) {
+      btnToggleProjector.classList.toggle('active');
+    }
+  }
+
+  /* ==========================================================================
      PRESENTATION CORE NAVIGATION ENGINE
      ========================================================================== */
 
   function initDeck() {
+    initTheme();
     buildSlideDots();
     buildSlideOverviewGrid();
     setupEventListeners();
@@ -167,6 +239,10 @@
     if (slideNum < 1 || slideNum > TOTAL_SLIDES) return;
 
     currentSlideIndex = slideNum;
+
+    // Reset slide scroll position for mobile & responsive stages
+    const stage = document.getElementById('presentation-stage');
+    if (stage) stage.scrollTop = 0;
 
     // Update Slide Elements
     slides.forEach((slide) => {
@@ -182,9 +258,10 @@
     const meta = slideMetadata[currentSlideIndex - 1];
     hudSlideTitle.textContent = `${meta.index < 10 ? '0' + meta.index : meta.index}. ${meta.title}`;
 
-    // Update Progress Bar
+    // Update Progress Bar & Mobile Hairline Progress
     const progressPercent = (currentSlideIndex / TOTAL_SLIDES) * 100;
     progressFill.style.width = `${progressPercent}%`;
+    document.documentElement.style.setProperty('--mobile-progress', `${progressPercent}%`);
 
     // Update Bottom HUD Counters
     counterCurrent.textContent = currentSlideIndex < 10 ? `0${currentSlideIndex}` : currentSlideIndex;
@@ -351,6 +428,14 @@
     btnFullscreen.addEventListener('click', toggleFullscreen);
     document.addEventListener('fullscreenchange', updateFullscreenIcons);
 
+    // Theme & Projector Toggles
+    if (btnToggleTheme) {
+      btnToggleTheme.addEventListener('click', toggleTheme);
+    }
+    if (btnToggleProjector) {
+      btnToggleProjector.addEventListener('click', toggleProjectorMode);
+    }
+
     btnToggleNotes.addEventListener('click', togglePresenterNotes);
     btnCloseNotes.addEventListener('click', () => presenterNotesDrawer.classList.remove('open'));
 
@@ -371,6 +456,35 @@
     if (btnOpenOverviewSummary) {
       btnOpenOverviewSummary.addEventListener('click', openSlideOverview);
     }
+
+    // Touch Swipe Gestures for Mobile Phones & Tablets
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    presentationContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+
+    presentationContainer.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Ensure gesture is intentional horizontal swipe (>45px and predominantly horizontal)
+      if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY) * 1.35) {
+        const targetTag = e.target.tagName;
+        if (targetTag === 'INPUT' || targetTag === 'TEXTAREA' || e.target.closest('.timeline-container') || e.target.closest('.slider-row')) {
+          return;
+        }
+        if (diffX < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }, { passive: true });
 
     // Keyboard Shortcuts
     document.addEventListener('keydown', (e) => {
@@ -402,6 +516,18 @@
         case 'End':
           e.preventDefault();
           goToSlide(TOTAL_SLIDES);
+          break;
+
+        case 't':
+        case 'T':
+          e.preventDefault();
+          toggleTheme();
+          break;
+
+        case 'p':
+        case 'P':
+          e.preventDefault();
+          toggleProjectorMode();
           break;
 
         case 'f':
